@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leads | Munto Digicomms</title>
+<link rel="stylesheet" href="/css/style.css">
+<style>table{width:100%;border-collapse:collapse;background:#fff}th,td{padding:12px;border-bottom:1px solid #e6e3da;text-align:left;vertical-align:top;font-size:.92rem}th{font-family:sans-serif}.box{overflow-x:auto}</style>
+</head>
+<body>
+<div class="wrap" style="padding-top:40px;padding-bottom:40px">
+  <h2>Leads (<%= leads.length %>)</h2>
+  <div class="box">
+    <table>
+      <tr><th>Date</th><th>Name</th><th>Business</th><th>Needs</th><th>Message</th><th>Status</th></tr>
+      <% leads.forEach(function (l) { %>
+      <tr>
+        <td><%= l.createdAt.toISOString().slice(0, 16).replace('T', ' ') %></td>
+        <td><%= l.name %></td>
+        <td><%= l.business %></td>
+        <td><%= l.service %></td>
+        <td><%= l.message %></td>
+        <td><%= l.status %></td>
+      </tr>
+      <% }) %>
+    </table>
+  </div>
+</div>
+</body>
+</html>
