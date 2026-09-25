@@ -14,6 +14,8 @@ app.use(express.json({ limit: '10kb' }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => res.render('index'));
+app.get('/privacy', (req, res) => res.render('privacy'));
+app.get('/terms', (req, res) => res.render('terms'));
 
 const limiter = rateLimit({ windowMs: 15 * 60 * 1000, limit: 10 });
 const clean = (v, max) => String(v || '').trim().slice(0, max);
