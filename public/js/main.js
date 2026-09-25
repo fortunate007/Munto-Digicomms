@@ -76,6 +76,46 @@ if (magnetForm) {
   if (accept) accept.addEventListener('click', function () { setConsent('accepted'); });
   if (decline) decline.addEventListener('click', function () { setConsent('declined'); });
 })();
+// Floating contact ticker: cycles welcome + WhatsApp + phone + email
+(function () {
+  var box = document.getElementById('contact-ticker');
+  if (!box) return;
+  var closeBtn = document.getElementById('ct-close');
+  var iconEl = document.getElementById('ct-icon');
+  var textEl = document.getElementById('ct-text');
+  var HIDE_KEY = 'munto_contact_ticker_closed';
+  try {
+    if (sessionStorage.getItem(HIDE_KEY)) { box.style.display = 'none'; return; }
+  } catch (e) {}
+
+  // TODO: replace the phone/WhatsApp number and email below with your real details
+  var messages = [
+    { icon: '\uD83D\uDC4B', html: 'Thank you for visiting Munto Digicomms &mdash; we serve at your pleasure.' },
+    { icon: '\uD83D\uDCAC', html: 'Chat on WhatsApp: <a href="https://wa.me/254700000000" target="_blank" rel="noopener">+254 700 000 000</a>' },
+    { icon: '\uD83D\uDCDE', html: 'Call us: <a href="tel:+254700000000">+254 700 000 000</a>' },
+    { icon: '\u2709\uFE0F', html: 'Email: <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a>' }
+  ];
+  var i = 0;
+  function show(index) {
+    textEl.classList.add('fade');
+    setTimeout(function () {
+      iconEl.innerHTML = messages[index].icon;
+      textEl.innerHTML = messages[index].html;
+      textEl.classList.remove('fade');
+    }, 350);
+  }
+  var timer = setInterval(function () {
+    i = (i + 1) % messages.length;
+    show(i);
+  }, 4000);
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function () {
+      clearInterval(timer);
+      box.style.display = 'none';
+      try { sessionStorage.setItem(HIDE_KEY, '1'); } catch (e) {}
+    });
+  }
+})();
 
 var items = document.querySelectorAll('.card, .steps > div, details, .quote, .founder');
 items.forEach(function (el) { el.classList.add('reveal'); });
