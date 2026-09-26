@@ -70,7 +70,8 @@ footer{padding:26px 0;color:var(--muted);font-size:.9rem;border-top:1px solid va
 .brand{display:inline-flex;align-items:center;gap:10px}
 
 /* --- cookie banner --- */
-.cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--ink);color:#fff;padding:14px 20px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-size:.88rem}
+.cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--ink);color:#fff;padding:14px 20px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-size:.88rem}
+.cookie-banner[hidden]{display:none}
 .cookie-banner a{color:#ffb27a}
 .cookie-actions{display:flex;gap:8px;flex-shrink:0}
 
@@ -133,9 +134,9 @@ blockquote{margin:0;font-style:italic;color:var(--fg)}
 /* --- floating contact ticker badge --- */
 .contact-ticker{position:fixed;top:calc(72px + env(safe-area-inset-top, 0px));right:16px;z-index:60;background:#0a0a0a;color:#4fc3f7;border:1px solid rgba(79,195,247,.35);border-radius:14px;padding:10px 30px 10px 12px;display:flex;align-items:flex-start;gap:8px;width:min(200px, calc(100vw - 32px));box-shadow:0 4px 18px rgba(0,0,0,.35), 0 0 0 1px rgba(79,195,247,.06);font-size:.76rem;font-weight:600;line-height:1.35}
 .contact-ticker .ct-icon{flex:0 0 auto;font-size:1rem;margin-top:1px;filter:drop-shadow(0 0 4px rgba(79,195,247,.5))}
-.contact-ticker .ct-text{display:-webkit-box;line-clamp:3;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;transition:opacity .35s ease, transform .35s ease}
+.contact-ticker .ct-text{display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;transition:opacity .35s ease, transform .35s ease}
 .contact-ticker .ct-text.fade{opacity:0;transform:translateY(-4px)}
 .contact-ticker .ct-close{position:absolute;top:4px;right:8px;background:transparent;border:none;color:#4fc3f7;opacity:.6;font-size:1.1rem;line-height:1;cursor:pointer;padding:6px}
 .contact-ticker .ct-close:hover{opacity:1}
 .contact-ticker a{color:#4fc3f7;text-decoration:underline}
-@media(max-width:560px){.contact-ticker{top:auto;bottom:calc(16px + env(safe-area-inset-bottom, 0px));right:12px;left:12px;width:auto}}
+@media(max-width:560px){.contact-ticker{width:min(170px, calc(100vw - 32px));font-size:.72rem;padding:8px 26px 8px 10px}}
