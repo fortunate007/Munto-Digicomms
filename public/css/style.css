@@ -126,7 +126,7 @@ blockquote{margin:0;font-style:italic;color:var(--fg)}
 .legal h2{font-size:1.2rem;margin:32px 0 8px}
 .legal p,.legal li{color:var(--muted)}
 /* --- running text / marquee ticker --- */
-.ticker{overflow:hidden;background:var(--accent);border-top:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08)}
+.ticker{overflow:hidden;background:var(--accent);border-top:1px solid rgba(0, 0, 0, 0.08);border-bottom:1px solid rgba(0,0,0,.08)}
 .ticker-track{display:flex;width:max-content;gap:14px;padding:10px 0;animation:ticker-scroll 28s linear infinite;white-space:nowrap}
 .ticker-track span{color:#fff;font-weight:600;font-size:.85rem;letter-spacing:.02em;text-transform:uppercase}
 @keyframes ticker-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
