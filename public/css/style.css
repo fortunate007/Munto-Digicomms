@@ -70,8 +70,10 @@ footer{padding:26px 0;color:var(--muted);font-size:.9rem;border-top:1px solid va
 .brand{display:inline-flex;align-items:center;gap:10px}
 
 /* --- cookie banner --- */
-.cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--ink);color:#fff;padding:14px 20px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-size:.88rem}
-.cookie-banner[hidden]{display:none}
+.cookie-banner
+::file-selector-button{display:none}
+.cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--ink);color:#fff;padding:14px 20px;display:none;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-size:.88rem}
+.cookie-banner:not([hidden]){display:flex}
 .cookie-banner a{color:#ffb27a}
 .cookie-actions{display:flex;gap:8px;flex-shrink:0}
 

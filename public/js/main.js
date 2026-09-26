@@ -88,12 +88,12 @@ if (magnetForm) {
     if (sessionStorage.getItem(HIDE_KEY)) { box.style.display = 'none'; return; }
   } catch (e) {}
 
-  // TODO: replace the phone/WhatsApp number and email below with your real details
+  // Messages to cycle through
   var messages = [
     { icon: '\uD83D\uDC4B', html: 'Thank you for visiting Munto Digicomms &mdash; we serve at your pleasure.' },
-    { icon: '\uD83D\uDCAC', html: 'Chat on WhatsApp: <a href="https://wa.me/254700000000" target="_blank" rel="noopener">+254 700 000 000</a>' },
-    { icon: '\uD83D\uDCDE', html: 'Call us: <a href="tel:+254700000000">+254 700 000 000</a>' },
-    { icon: '\u2709\uFE0F', html: 'Email: <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a>' }
+    { icon: '\uD83D\uDCAC', html: 'Chat on WhatsApp: <a href="https://wa.me/254792232969" target="_blank" rel="noopener">+254 792 232 969</a>' },
+    { icon: '\uD83D\uDCDE', html: 'Call us: <a href="tel:+254792232969">+254 792 232 969</a>' },
+    { icon: '\u2709\uFE0F', html: 'Email: <a href="mailto:elmnton@gmail.com">elmnton@gmail.com</a>' }
   ];
   var i = 0;
   function show(index) {
